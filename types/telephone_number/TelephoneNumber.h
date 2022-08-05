@@ -7,7 +7,7 @@ class TelephoneNumber {
 public:
     TelephoneNumber() = delete;
     TelephoneNumber(const std::string& tel_num);
-    static const std::string& ValidateTelephoneNumber(const std::string& tel_num);
+    static const std::string ValidateTelephoneNumber(const std::string& tel_num);
     friend std::ostream& operator << (std::ostream& os, const TelephoneNumber& telephone_number);
 private:
     const std::string m_telephone_number;
