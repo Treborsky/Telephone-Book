@@ -1,0 +1,21 @@
+Phonebook:
+  pages: ordered list of Page
+
+Page:
+  records: ordered list of Record
+  page number: unsigned integer
+
+Record:
+  name: Name
+  address: Address
+  phone number: PhoneNumber
+
+Name:
+  first name: string
+  last name: string
+
+Address:
+  address: string
+
+PhoneNumber:
+  phone number: string

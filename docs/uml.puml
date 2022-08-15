@@ -1,0 +1,52 @@
+@startuml
+
+class Phonebook {
+ + std::size_t get_nr_of_pages() const
+ + std::???<Page> get_pages() 
+// to replace with iterators and access operators
+---
+ - pages_ [std::???<Page>]
+}
+
+class Page {
+ + std::???<Record> get_records()
+ + std::size_t get_page_nr() const
+---
+ - records_ [std::???<Record>]
+ - page_number_ [std::size_t]
+}
+
+class Record {
+ + const std::string& get_name() const override final
+ + const Address& get_address() const override final
+ + const std::string& get_phone_number() const override final
+}
+
+class Name {
+ + virtual const std::string& get_first_name() const
+ + virtual const std::string& get_last_name() const
+---
+ - first_name_ [std::string]
+ - last_name_ [std::string]
+}
+
+class Address {
+ + virtual const std::string& get_address() const
+---
+ - address_ [std::string]
+}
+
+class PhoneNumber {
+ + virtual const std::string& get_phone_number() const
+---
+ - phone_number_ [std::string]
+}
+
+Phonebook "1" o-- "N" Page : consists of
+Page "1" o-- "N" Record : consists of
+
+Record <|-- PhoneNumber
+Record <|-- Name
+Record <|-- Address
+
+@enduml
