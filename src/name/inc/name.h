@@ -5,13 +5,14 @@
 #include <string>
 
 class Name {
-  public:
-  virtual std::string& get_first_name() { return first_name_; }
-  virtual std::string& get_last_name() { return last_name_; }
-  virtual const std::string& get_first_name() const { return first_name_; }
-  virtual const std::string& get_last_name() const { return last_name_; }
+public:
+  Name() : first_name_("no name"), last_name_("no name") {}
+  // virtual std::string& get_first_name() { return first_name_; }
+  // virtual std::string& get_last_name() { return last_name_; }
+  // virtual const std::string& get_first_name() const { return first_name_; }
+  // virtual const std::string& get_last_name() const { return last_name_; }
 
-  private:
+private:
   std::string first_name_;
   std::string last_name_;
 };
